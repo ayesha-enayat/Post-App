@@ -1,0 +1,22 @@
+form{
+    border:1px solid rgb(0, 102, 255);
+    border-radius: 6px;
+    padding:5px;
+    box-shadow: 5px 5px  10px rgba(0, 0, 0, 0.2);
+    background-color: rgb(78, 166, 218);
+
+}
+.btn{
+    background-color: rgb(9, 9, 247);
+}
+.card{
+    background-color: pink;
+    border: 2px solid black;
+    
+}
+.btn{
+    color:white;
+}
+.hidden{
+    display: none;
+}
