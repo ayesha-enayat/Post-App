@@ -157,6 +157,10 @@ blockquote footer {
     background-color: #39ff14;
     border-color: #39ff14;
 }
+h3{
+    color: #39ff14;
+
+}
 
 .form-check-label {
     color: #ddd;
@@ -172,11 +176,16 @@ blockquote footer {
     #form,
     .card {
         padding: 20px;
+    
     }
 
     #post {
         padding: 0;
     }
+}
+
+#post-form{
+    
 }
 
 @media (max-width: 576px) {

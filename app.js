@@ -12,11 +12,11 @@ document.getElementById("form").addEventListener('submit', function (e) {
 
     // Add new HTML structure for the post form
     postContainer.innerHTML += `
-        <div class="p-4 col col-10" id="post-form">
-            <div class="card p-2">
+   <div class="col-12 col-md-10 m-auto" id="post-form ">
+            <div class="card justify-content-center">
                 <div class="mb-3">
                     <h3>You are ready to post</h3>
-                    <label for="exampleFormControlInput1" class="form-label">Title:</label>
+                    <label for="exampleFormControlInput1" class="form-label">Enter Post Title</label>
                     <input id="title" type="text" class="form-control">
                 </div>
                 <div class="mb-3">
@@ -27,13 +27,17 @@ document.getElementById("form").addEventListener('submit', function (e) {
                     </div>
                 </div>
             </div>
+        </div>
+        </div>
         </div>`;
-    
+
     // Hide the form after submission
     document.getElementById("form").classList.add("hidden");
 });
 
 function post() {
+
+
     // Grab the title and description values from the input fields
     var title = document.getElementById("title");
     var description = document.getElementById("description");
@@ -44,20 +48,16 @@ function post() {
             text: "Write something",
             icon: "question"
         });
-    } else {
-        if (editingPost) {
-            // If editingPost is set, update the existing post
-            editingPost.querySelector('.ep').innerText = title.value;
-            editingPost.querySelector('.dp').innerText = description.value;
+    }
 
-            // Clear editingPost flag after editing
-            editingPost = null;
-        } else {
-            // Create a new post if not editing
-            var postContainer = document.getElementById("post");
+    else if (!editingPost) {
+        // Create a new post if not editing
+        var postContainer = document.getElementById("myPost");
 
-            postContainer.innerHTML += `
-                <div class="card p-2">
+        postContainer.innerHTML += `
+            
+
+                <div class="card p-2 m-3">
                     <div class="card-header">
                         <em>@post</em>
                     </div>
@@ -72,12 +72,31 @@ function post() {
                         <button onclick="deletebtn(this)">Delete post</button>
                     </div>
                 </div>`;
-        }
 
-        // Clear the input fields after posting or editing
-        title.value = "";
-        description.value = "";
+
+
     }
+
+    else {
+
+
+
+
+
+        // If editingPost is set, update the existing post
+        editingPost.querySelector('.ep').innerText = title.value;
+        editingPost.querySelector('.dp').innerText = description.value;
+
+
+
+        // Clear editingPost flag after editing
+        editingPost = null;
+    }
+
+
+    // Clear the input fields after posting or editing
+    title.value = "";
+    description.value = "";
 }
 
 function deletebtn(button) {
