@@ -9,6 +9,13 @@ const profilePhotoInput = document.getElementById("profilePhotoInput");
 
 signUpForm.addEventListener('submit', function (e) {
   e.preventDefault();
+  Swal.fire({
+    position: "top-end",
+    icon: "success",
+    title: "Account created successfully!",
+    showConfirmButton: false,
+    timer: 1500,
+  });
   postForm.classList.remove("hidden");
   signUpForm.classList.add("hidden");
   profilePhotoImg.classList.remove("hidden");
@@ -47,7 +54,7 @@ function post() {
     });
   } else {
     post.innerHTML += `<div class="card p-2 m-3 postcard">
-        <div class="card-header d-flex">
+        <div class="card-header d-flex  align-items-center">
        <img class="profile-photo" src="${profilePhotoImg.src}" />
        <div class="name-time d-flex flex-column p-2">
        <div class="userName">
@@ -60,13 +67,13 @@ function post() {
         <div style="background-image: url(${backgroundImg})" class="card-body">
           <blockquote class="blockquote mb-0">
             <p class="userPostTitle">${postTitle}</p>
-            <footer class="blockquote-footer"><p class="userPostDescription">${postDescription}</p>
+            <footer class="blockquote-footer userPostDescription">${postDescription}
             </footer>
           </blockquote>
 
-          <div>
+          <div class="mt-3 d-flex justify-content-end">
             <button onclick="editPost(this)" id="editbtn">Edit post</button> 
-            <button onclick="deletePost(this)" id="deletebtn">Delete post</button>
+            <button onclick="deletePost(this)" id="deletebtn" >Delete post</button>
           </div>
         </div>
       </div>`;

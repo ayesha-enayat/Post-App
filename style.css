@@ -16,6 +16,7 @@ body {
     color: white;
     font-weight: bold;
     font-size: 1.5rem;
+    background-color: #007bff;
 }
 
 /* Form Styles */
@@ -26,11 +27,6 @@ body {
     transition: all 0.3s ease;
     border:1px solid #007bff;
 }
-
-#SignUpForm:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
-}
-
 .form-control {
     border-radius: 5px;
     border: 1px solid #007bff; /* Blue border */
@@ -66,14 +62,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
     margin-bottom: 20px;
    border: 1px solid  #007bff;
-
-    
 }
-
-.navbar-brand{
-    background-color: #007bff;
-}
-
 .userName {
     color: white;
     font-weight: bold;
@@ -146,7 +135,7 @@ blockquote {
   }
 
   .images{
-    justify-content: space-evenly;
+    justify-content: space-around
 }
 .bg-img{
     height: 50px;
