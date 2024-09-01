@@ -14,7 +14,7 @@ signUpForm.addEventListener('submit', function (e) {
     icon: "success",
     title: "Account created successfully!",
     showConfirmButton: false,
-    timer: 1500,
+    timer: 2000,
   });
   postForm.classList.remove("hidden");
   signUpForm.classList.add("hidden");
